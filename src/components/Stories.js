@@ -37,14 +37,15 @@ const StoriesHeader = ({ columns }) =>
     )}
   </div>
 
-const Stories = ({stories}) =>
+const Stories = ({stories, onArchive }) =>
   <div className="stories">
     <StoriesHeader columns={COLUMNS} />
     {(stories || []).map(story =>
       <Story
-        key={story.objectId}
+        key={story.objectID}
         story={story}
         columns={COLUMNS}
+        onArchive={onArchive}
       />
     )}
   </div>
